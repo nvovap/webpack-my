@@ -1,3 +1,11 @@
+@import '~normalize.css';
+@import './robota.css';
+
+
+body {
+    font-family: 'Robota', sans-serif;
+}
+
 .contaner {
     padding-top: 2rem;
     max-width: 100px;
@@ -5,6 +13,10 @@
 }
 
 .h1 {
+    text-align: center;
+}
+
+pre {
     text-align: center;
 }
 

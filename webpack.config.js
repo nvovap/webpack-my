@@ -19,6 +19,15 @@ module.exports = {
         path: path.resolve(__dirname, 'dist')
     },
 
+    resolve: {
+        extensions: ['.js','.json'],
+        alias: {
+            '@models': path.resolve(__dirname, 'src/models'),
+            '@': path.resolve(__dirname, 'src')
+        }
+    },
+
+    
     plugins: [
         new HTMLWebpackPlugin({
             template: './index.html'
@@ -33,8 +42,20 @@ module.exports = {
                 use: ['style-loader','css-loader']
             },
             {
+                test: /\.(ttf|woff)$/,
+                use: ['file-loader']
+            },
+            {
                 test: /\.(png|svg|gif|jpg)$/,
                 use: ['file-loader']
+            },
+            {
+                test: /\.xml$/,
+                use: ['xml-loader']
+            },
+            {
+                test: /\.csv$/,
+                use: ['csv-loader']
             }
         ]
     }
